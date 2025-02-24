@@ -6,19 +6,25 @@
         body {
             font-family: Arial, sans-serif;
             margin: 50px;
+            background-color: #f4f4f4;
         }
         .form-container {
-            max-width: 600px;
+            max-width: 700px;
             margin: auto;
             padding: 20px;
-            border: 1px solid #ccc;
+            background: white;
             border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
         }
         .form-container input {
             width: 100%;
-            padding: 10px;
-            margin: 5px 0 20px 0;
-            display: inline-block;
+            padding: 8px;
+            margin-top: 5px;
             border: 1px solid #ccc;
             border-radius: 5px;
             box-sizing: border-box;
@@ -26,6 +32,7 @@
         .form-container input[type="submit"] {
             background-color: #4CAF50;
             color: white;
+            margin-top: 20px;
             border: none;
             cursor: pointer;
         }
@@ -43,82 +50,83 @@
 <body>
     <div class="form-container">
         <h2>Alzheimer's Risk Prediction</h2>
+        <p>Enter medical and lifestyle details to estimate the risk of Alzheimer's.</p>
         <form action="/predict" method="post">
-            <label for="ARTSPIN">ARTSPIN:</label>
-            <input type="number" step="0.01" name="ARTSPIN" required>
-
-            <label for="CBSTROKE">CBSTROKE:</label>
-            <input type="number" step="0.01" name="CBSTROKE" required>
-
-            <label for="PDOTHR">PDOTHR:</label>
-            <input type="number" step="0.01" name="PDOTHR" required>
-
-            <label for="NACCAGE">NACCAGE:</label>
-            <input type="number" step="0.01" name="NACCAGE" required>
-
-            <label for="SLEEPAP">SLEEPAP:</label>
-            <input type="number" step="0.01" name="SLEEPAP" required>
-
-            <label for="SEIZURES">SEIZURES:</label>
-            <input type="number" step="0.01" name="SEIZURES" required>
-
-            <label for="ARTH">ARTH:</label>
-            <input type="number" step="0.01" name="ARTH" required>
-
-            <label for="PSYCDIS">PSYCDIS:</label>
-            <input type="number" step="0.01" name="PSYCDIS" required>
-
-            <label for="HRATE">HRATE:</label>
+            <label for="NACCAGE">Age (in years):</label>
+            <input type="number" step="1" name="NACCAGE" required>
+            
+            <label for="ARTSPIN">Spinal Arthritis (0: No, 1: Yes):</label>
+            <input type="number" name="ARTSPIN" required>
+            
+            <label for="CBSTROKE">History of Stroke (0: No, 1: Yes):</label>
+            <input type="number" name="CBSTROKE" required>
+            
+            <label for="PDOTHR">Other Parkinson's Disease Symptoms (0: No, 1: Yes):</label>
+            <input type="number" name="PDOTHR" required>
+            
+            <label for="SLEEPAP">Sleep Apnea Diagnosis (0: No, 1: Yes):</label>
+            <input type="number" name="SLEEPAP" required>
+            
+            <label for="SEIZURES">Seizure Episodes (0: No, 1: Yes):</label>
+            <input type="number" name="SEIZURES" required>
+            
+            <label for="ARTH">Arthritis Diagnosis (0: No, 1: Yes):</label>
+            <input type="number" name="ARTH" required>
+            
+            <label for="PSYCDIS">Psychiatric Disorders (0: No, 1: Yes):</label>
+            <input type="number" name="PSYCDIS" required>
+            
+            <label for="HRATE">Heart Rate (BPM):</label>
             <input type="number" step="0.01" name="HRATE" required>
-
-            <label for="REMDIS">REMDIS:</label>
-            <input type="number" step="0.01" name="REMDIS" required>
-
-            <label for="PACKSPER">PACKSPER:</label>
-            <input type="number" step="0.01" name="PACKSPER" required>
-
-            <label for="BPDIAS">BPDIAS:</label>
-            <input type="number" step="0.01" name="BPDIAS" required>
-
-            <label for="WEIGHT">WEIGHT:</label>
+            
+            <label for="REMDIS">REM Sleep Behavior Disorder (0: No, 1: Yes):</label>
+            <input type="number" name="REMDIS" required>
+            
+            <label for="PACKSPER">Cigarettes Smoked Per Day:</label>
+            <input type="number" step="1" name="PACKSPER" required>
+            
+            <label for="BPDIAS">Diastolic Blood Pressure (mmHg):</label>
+            <input type="number" step="1" name="BPDIAS" required>
+            
+            <label for="WEIGHT">Weight (kg):</label>
             <input type="number" step="0.01" name="WEIGHT" required>
-
-            <label for="DEP2YRS">DEP2YRS:</label>
-            <input type="number" step="0.01" name="DEP2YRS" required>
-
-            <label for="DIABETES">DIABETES:</label>
-            <input type="number" step="0.01" name="DIABETES" required>
-
-            <label for="DEPOTHR">DEPOTHR:</label>
-            <input type="number" step="0.01" name="DEPOTHR" required>
-
-            <label for="B12DEF_PREFINAL">B12DEF_PREFINAL:</label>
-            <input type="number" step="0.01" name="B12DEF_PREFINAL" required>
-
-            <label for="CVOTHR">CVOTHR:</label>
-            <input type="number" step="0.01" name="CVOTHR" required>
-
-            <label for="ARTLOEX">ARTLOEX:</label>
-            <input type="number" step="0.01" name="ARTLOEX" required>
-
-            <label for="HYPOSOM">HYPOSOM:</label>
-            <input type="number" step="0.01" name="HYPOSOM" required>
-
-            <label for="NACCAMD">NACCAMD:</label>
-            <input type="number" step="0.01" name="NACCAMD" required>
-
-            <label for="CBTIA">CBTIA:</label>
-            <input type="number" step="0.01" name="CBTIA" required>
-
-            <label for="BPSYS">BPSYS:</label>
-            <input type="number" step="0.01" name="BPSYS" required>
-
-            <label for="TOBAC100">TOBAC100:</label>
-            <input type="number" step="0.01" name="TOBAC100" required>
-
+            
+            <label for="DEP2YRS">Depression in Last 2 Years (0: No, 1: Yes):</label>
+            <input type="number" name="DEP2YRS" required>
+            
+            <label for="DIABETES">Diabetes Diagnosis (0: No, 1: Yes):</label>
+            <input type="number" name="DIABETES" required>
+            
+            <label for="DEPOTHR">Other Depression Diagnosis (0: No, 1: Yes):</label>
+            <input type="number" name="DEPOTHR" required>
+            
+            <label for="B12DEF_PREFINAL">Vitamin B12 Deficiency (0: No, 1: Yes):</label>
+            <input type="number" name="B12DEF_PREFINAL" required>
+            
+            <label for="CVOTHR">Other Cardiovascular Conditions (0: No, 1: Yes):</label>
+            <input type="number" name="CVOTHR" required>
+            
+            <label for="ARTLOEX">Arthritis in Lower Extremities (0: No, 1: Yes):</label>
+            <input type="number" name="ARTLOEX" required>
+            
+            <label for="HYPOSOM">Insomnia/Hyposomnia (0: No, 1: Yes):</label>
+            <input type="number" name="HYPOSOM" required>
+            
+            <label for="NACCAMD">Age-Related Macular Degeneration (0: No, 1: Yes):</label>
+            <input type="number" name="NACCAMD" required>
+            
+            <label for="CBTIA">Transient Ischemic Attack (0: No, 1: Yes):</label>
+            <input type="number" name="CBTIA" required>
+            
+            <label for="BPSYS">Systolic Blood Pressure (mmHg):</label>
+            <input type="number" step="1" name="BPSYS" required>
+            
+            <label for="TOBAC100">Ever Smoked 100+ Cigarettes? (0: No, 1: Yes):</label>
+            <input type="number" name="TOBAC100" required>
+            
             <input type="submit" value="Predict">
         </form>
-
+        
         {% if prediction_text %}
         <div class="result">{{ prediction_text }}</div>
         {% endif %}
