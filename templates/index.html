@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alzheimer's Risk Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-container input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .result {
+            font-size: 1.5em;
+            color: #4CAF50;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Alzheimer's Risk Prediction</h2>
+        <form action="/predict" method="post">
+            <label for="ARTSPIN">ARTSPIN:</label>
+            <input type="number" step="0.01" name="ARTSPIN" required>
+
+            <label for="CBSTROKE">CBSTROKE:</label>
+            <input type="number" step="0.01" name="CBSTROKE" required>
+
+            <label for="PDOTHR">PDOTHR:</label>
+            <input type="number" step="0.01" name="PDOTHR" required>
+
+            <label for="NACCAGE">NACCAGE:</label>
+            <input type="number" step="0.01" name="NACCAGE" required>
+
+            <label for="SLEEPAP">SLEEPAP:</label>
+            <input type="number" step="0.01" name="SLEEPAP" required>
+
+            <label for="SEIZURES">SEIZURES:</label>
+            <input type="number" step="0.01" name="SEIZURES" required>
+
+            <label for="ARTH">ARTH:</label>
+            <input type="number" step="0.01" name="ARTH" required>
+
+            <label for="PSYCDIS">PSYCDIS:</label>
+            <input type="number" step="0.01" name="PSYCDIS" required>
+
+            <label for="HRATE">HRATE:</label>
+            <input type="number" step="0.01" name="HRATE" required>
+
+            <label for="REMDIS">REMDIS:</label>
+            <input type="number" step="0.01" name="REMDIS" required>
+
+            <label for="PACKSPER">PACKSPER:</label>
+            <input type="number" step="0.01" name="PACKSPER" required>
+
+            <label for="BPDIAS">BPDIAS:</label>
+            <input type="number" step="0.01" name="BPDIAS" required>
+
+            <label for="WEIGHT">WEIGHT:</label>
+            <input type="number" step="0.01" name="WEIGHT" required>
+
+            <label for="DEP2YRS">DEP2YRS:</label>
+            <input type="number" step="0.01" name="DEP2YRS" required>
+
+            <label for="DIABETES">DIABETES:</label>
+            <input type="number" step="0.01" name="DIABETES" required>
+
+            <label for="DEPOTHR">DEPOTHR:</label>
+            <input type="number" step="0.01" name="DEPOTHR" required>
+
+            <label for="B12DEF_PREFINAL">B12DEF_PREFINAL:</label>
+            <input type="number" step="0.01" name="B12DEF_PREFINAL" required>
+
+            <label for="CVOTHR">CVOTHR:</label>
+            <input type="number" step="0.01" name="CVOTHR" required>
+
+            <label for="ARTLOEX">ARTLOEX:</label>
+            <input type="number" step="0.01" name="ARTLOEX" required>
+
+            <label for="HYPOSOM">HYPOSOM:</label>
+            <input type="number" step="0.01" name="HYPOSOM" required>
+
+            <label for="NACCAMD">NACCAMD:</label>
+            <input type="number" step="0.01" name="NACCAMD" required>
+
+            <label for="CBTIA">CBTIA:</label>
+            <input type="number" step="0.01" name="CBTIA" required>
+
+            <label for="BPSYS">BPSYS:</label>
+            <input type="number" step="0.01" name="BPSYS" required>
+
+            <label for="TOBAC100">TOBAC100:</label>
+            <input type="number" step="0.01" name="TOBAC100" required>
+
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if prediction_text %}
+        <div class="result">{{ prediction_text }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
