@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 
 # Load the trained model
-model_path = 'lightgbm_model.pkl'
+model_path = 'lightgbm_model_22-04-2025.pkl'
 with open(model_path, 'rb') as file:
     model = pickle.load(file)
 
