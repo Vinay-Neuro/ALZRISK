@@ -19,9 +19,12 @@ def predict():
     input_values = [float(x) for x in request.form.values()]
     input_array = np.array(input_values).reshape(1, -1)  # Ensure correct shape
 
-    # Make prediction
-    prediction = model.predict(input_array)
-    output = 'Risk of developing Alzheimer\'s' if prediction[0] == 1 else 'No risk of developing Alzheimer\'s'
+    # Predict probability
+    probability = model.predict_proba(input_array)[0][1]  # Probability of class 1
+
+    # Format probability as percentage
+    prob_percent = round(probability * 100, 2)
+    output = f'Estimated risk of developing Alzheimer\'s: {prob_percent}%'
 
     return render_template('index.html', prediction_text=f'Prediction: {output}')
 
